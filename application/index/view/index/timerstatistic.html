@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XGTimer计时器后台</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background: #c6c6c6;
+        }
+
+        .mainbox {
+            width: 960px;
+            height: 920px;
+            margin: 0 auto;
+            background: white;
+
+        }
+
+        .header {
+            width: 100%;
+            height: 60px;
+            background: #efefef;
+
+        }
+
+        .logobox {
+            width: 200px;
+            height: 100%;
+            float: left;
+        }
+
+        .navbox {
+            width: 600px;
+            height: 100%;
+            float: right;
+        }
+
+        .nav {
+            width: 600px;
+            height: 50%;
+            margin-top: 30px;
+            list-style: none;
+        }
+
+        .nav li {
+            width: 100px;
+            height: 100%;
+            margin-left: 20px;
+            float: left;
+        }
+
+        .body {
+            width: 100%;
+            height: 800px;
+            margin-top: 20px;
+        }
+
+        .leftbox {
+            width: 20%;
+            height: 100%;
+            float: left;
+            text-align: center;
+            background: #efefef;
+        }
+
+        .bodynav {
+            list-style: none;
+            width: 80%;
+            height: 100%;
+        }
+
+        .bodynav li {
+            margin-top: 30px;
+        }
+
+        .rightbox {
+            width: 76%;
+            height: 100%;
+            float: right;
+            background: #efefef;
+        }
+
+        .rightbox .table {
+        }
+
+        .rightbox .table tr {
+            width: 100%;
+            height: 20px;
+
+        }
+
+        .rightbox .table td {
+            width: 200px;
+            height: 30px;
+            margin-left: 30px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .footer {
+            width: 100%;
+            height: 60px;
+            background: #333333;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="mainbox">
+    <div class="header">
+        <div class="logobox"></div>
+
+        <div class="navbox">
+            <ul class="nav">
+                <li>{$userName}</li>
+                <li>{$trueName}</li>
+                <li>权限等级：{$permit}</li>
+                <li>个人信息</li>
+                <li><a href="{:url('Index/unLogin')}">注销</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="body">
+
+        <div class="leftbox">
+
+            <ul class="bodynav">
+                <li><a href="{:url('Index/admin')}">视察成员</a></li>
+                <li><a href="{:url('Index/TimerStatistic')}">计时排行榜</a></li>
+                <li>查看留言板</li>
+            </ul>
+
+        </div>
+        <div class="rightbox">
+
+            <table class="table">
+                <tr>
+                    <th>排名</th>
+                    <th>真实姓名</th>
+                    <th>格言</th>
+                    <th>计时</th>
+                    <th>本周任务</th>
+                </tr>
+                {volist name="list" id="vo"}
+                <tr>
+                    <td>{$key}</td>
+                    <td>{$vo.trueName}</td>
+                    <td>{$vo.motto}</td>
+                    <td><?php
+                    echo floor($vo['seconds']/3600)." 小时".floor($vo['seconds']%3600/60)." 分钟";
+?>
+                    </td>
+                    <td><?php if($vo['seconds']>=16*3600) echo "达标"; else echo "未达标"; ?></td>
+                </tr>
+                {/volist}
+
+
+            </table>
+
+        </div>
+
+
+    </div>
+    <div class="footer"></div>
+</div>
+
+</body>
+</html>
