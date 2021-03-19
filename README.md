@@ -24,7 +24,7 @@
 #### 技术栈
 MySQL+PHP+ThinkPHP5
 
-1. 后台数据处理采用基于 PHP 的 ThinkPHP5 开发
+1. 后台数据处理采用基于 PHP 的 ThinkPHP5 框架开发
 2. 计时信息保存在 MySQL 数据库上
 
 #### 功能特性
