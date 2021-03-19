@@ -1,0 +1,165 @@
+/* CSS Document */
+/*
+BEM 设计模式
+
+模块 （没有前缀，多个单词用 - 连接）
+元素 （元素在模块之后，可以有多个层级，以 __连接）
+修饰 (某元素、或者某模块特别的状态，必须有一个状态名和状态值 使用 -- 连接)
+@charset "utf-8";
+*/
+
+html,body
+{
+	margin:0;
+	padding:0;
+	width:100%;
+}
+body
+{
+	font-size:12px;font-family: "微软雅黑";
+	color:#333;line-height:160%;
+	background: url(../img/login-bg.jpg) center top repeat-x #FFF;
+	height:100%;
+}
+p,ul,.name,.pwd,dd,h1,h2,h3,form,input,select,textarea
+{
+	margin:0;padding:0;border:0;font-family:"微软雅黑";line-height:150%;
+}
+ul,li
+{
+	list-style:none;
+}
+div,p
+{
+	word-wrap: break-word;/*允许长字符串换到下一行*/
+}
+img
+{
+	border: none;
+}
+input,button,select,textarea
+{
+	outline:none;
+}
+
+/*login*/
+.login
+{
+	background:url(../img/login-bg.jpg) center top no-repeat #FFF;
+	padding:300px 100px 110px 0px;
+}
+.login-log--submit
+{
+	border:none;
+	font-weight:bold;
+	color:#FFF;
+	margin:25px 0 0 150px;
+	border-radius:3px;
+    box-shadow: #CCC 0px 0px 5px;
+	background: #31b6e7;
+	cursor: pointer;
+	padding:6px 20px;
+}
+.login-log--submit:hover
+{
+	background:#ff9229;
+}
+
+.login_box
+{
+	position:relative;z-index:100;
+	margin:0 auto;
+	width:700px;
+	height:320px;
+	background:url(../img/login.png) center top no-repeat;
+}
+.login-log{
+	position:relative;
+	width:370px;
+	height:260px;
+	margin:0 auto;
+	padding:90px 0 0 20px;
+}
+.login__logo
+{
+	height:85px;
+	position:absolute;
+	top:15px;
+	left:180px;
+	background:url(../img/logo-login.png) no-repeat;
+	width:350px;
+}
+
+.login label
+{
+	display:inline-block;
+	width:70px;
+	text-align:right;
+	padding-right:20px;
+	vertical-align:middle;
+}
+.login-log__name
+{
+	padding:10px 5px;font-size:14px;
+}
+.login-log__pwd
+{
+	padding:10px 5px;font-size:14px;
+}
+
+.login .text
+{
+	filter:alpha(opacity=80);
+	opacity:0.8;
+}
+
+.login-air-balloon
+{
+	position:absolute;
+	top:100px;
+	left:100px;
+	z-index:50;
+}
+.login-air-balloon__ab-1
+{
+	width:43px;
+	height:78px;
+	background:url(../img/air-balloon-1.png) no-repeat;
+}
+.login-air-balloon__ab-2
+{
+	width:24px;
+	height:31px;
+	background:url(../img/air-balloon-2.png) no-repeat;
+}
+.login-footer
+{
+	position: fixed;
+	left:0;
+	bottom:0;
+	text-align: center;
+	z-index:-1;width:100%;height:198px;
+	background:url(../img/login-foot.jpg) center bottom repeat-x;
+}
+.text
+{
+	border:1px solid #CCC;
+	padding:5px;
+	background-color:#FCFCFC;
+	line-height:14px;
+	width:220px;
+	font-size:12px;
+	border-radius:4px;
+	box-shadow: #CCC 0px 0px 5px;
+}
+.text:focus
+{
+	border:1px solid #31b6e7;
+	background-color:#FFF;
+	box-shadow: #0178a4 0px 0px 5px;
+}
+.text:hover
+{
+	background-color:#FFF;
+}
+
